@@ -1,10 +1,3 @@
-//
-//  AccountHolder.cpp
-//  Bank Management System
-//
-//  Created by Dakir Thompson on 1/18/24.
-//
-
 #include <limits>
 #include <ctime>
 #include <cstdlib>
@@ -12,8 +5,9 @@
 
 AccountHolder::AccountHolder(std::string fn, std::string ln, unsigned int age, std::string job):Person{fn,ln,age,job}{
     std::cout<<"Account Created for "<<getName()<<std::endl;
-    AccountNumber = rd();
+    accountNumber = rd();
 }
+AccountHolder::AccountHolder(){accountNumber = rd();};
 
 //void AccountHolder::setAccountNumber(long accNum)
 //{
@@ -22,15 +16,19 @@ AccountHolder::AccountHolder(std::string fn, std::string ln, unsigned int age, s
 
 long AccountHolder::getAccountNumber(void)
 {
-    return AccountNumber;
+    return accountNumber;
 }
 
 void AccountHolder::newAccountNumber()
 {
     //truly random number generation for the account number.
-    AccountNumber = rd();
-    std::cout<< rd()<<" New Account num is "<<AccountNumber<<std::endl;
+    accountNumber = rd();
+    std::cout<< rd()<<" New Account num is "<<accountNumber<<std::endl;
     
     //return rd();
     
 }
+
+double AccountHolder::getBalance(){ return balance; }
+
+void AccountHolder::updateBalance(double amount){ balance += amount; }

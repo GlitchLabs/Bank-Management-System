@@ -15,9 +15,12 @@ class Person
 {
 public://interface
     Person(std::string firstName, std::string lastName, unsigned int age, std::string job);
+    Person();
     
     void setName(std::string fullname);
     std::string getName(void);
+    std::string getFirstName(void);
+    std::string getLastName(void);
     
     void setAge(unsigned int age);
     unsigned int getAge(void);

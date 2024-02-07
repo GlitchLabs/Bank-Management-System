@@ -8,10 +8,8 @@
 #include "Person.hpp"
 
 Person::Person(std::string firstName, std::string lastName, unsigned int age = 18, std::string job = "Engineer")
-:fName{firstName}, lName{lastName}, mAge{age}, occupation{job}
-{
-    
-}
+:fName{firstName}, lName{lastName}, mAge{age}, occupation{job}{}
+Person::Person(){};
 
 void Person::setName(std::string fullName)
 {
@@ -29,6 +27,9 @@ std::string Person::getName(void)
 {
     return fName + " " + lName;
 }
+
+std::string Person::getFirstName(void) {return fName;}
+std::string Person::getLastName(void) {return lName;}
 
 void Person::setAge(unsigned int age)
 {

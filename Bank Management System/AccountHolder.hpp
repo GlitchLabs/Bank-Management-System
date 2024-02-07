@@ -13,12 +13,16 @@
 class AccountHolder : public Person{
 public://interface
     AccountHolder(std::string fn, std::string ln, unsigned int age, std::string job);
+    AccountHolder();
     //void setAccountNumber(long accNum);
     long getAccountNumber(void);
     void newAccountNumber();
+    double getBalance(void);
+    void updateBalance(double amount);
 private://implementation and data
-    long AccountNumber;
-    std::random_device rd;
+    unsigned short int accountNumber{};
+    double balance{};
+    std::random_device rd{};
     
 };
 

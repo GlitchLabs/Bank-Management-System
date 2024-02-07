@@ -16,9 +16,13 @@ class Bank{
 public://Interface
     Bank();
     void CreateAccount(int);
+    void Deposit(double dep, short int accNum);
+    double withdrawl(double);
+    unsigned short int getAccountNumber(void);
 private://Inplementation and Data
     //key is account number value is a * to accountHolders object
-    std::unordered_map<long, AccountHolder*> mCustomers;
+    std::unordered_map<unsigned short int, AccountHolder*> mCustomers;
+    unsigned short int currAccNum;
 };
 
 #endif /* Bank_hpp */
